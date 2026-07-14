@@ -1,0 +1,7 @@
+node_modules/@anthropic-ai/**
+node_modules/@types/**
+**/*.map
+**/*.md
+!README.md
+.git/**
+test/**

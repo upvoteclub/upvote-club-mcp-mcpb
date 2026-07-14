@@ -1,0 +1,52 @@
+{
+  "manifest_version": "0.3",
+  "name": "upvote-club",
+  "display_name": "Upvote.club",
+  "version": "1.0.0",
+  "description": "Promote any link with real engagement: create upvote, like, comment and follow tasks on Upvote.club straight from Claude.",
+  "long_description": "Upvote.club is a community-powered promotion platform: real members upvote, like, comment, follow, star and share your content across 18 platforms (Reddit, Product Hunt, Hacker News, X/Twitter, LinkedIn, GitHub, Quora, YouTube and more).\n\nWith this extension you can send Claude a link to promote — Claude detects the platform, picks the right action and creates a promotion task via the Upvote.club API. Track progress and cancel tasks (automatic refund of unused points) without leaving the chat.\n\n**Requirements:** Upvote.club MATE plan and an API key (https://upvote.club/api).",
+  "author": {
+    "name": "Upvote.club",
+    "email": "yes@upvote.club",
+    "url": "https://upvote.club"
+  },
+  "homepage": "https://upvote.club",
+  "documentation": "https://upvote.club/api",
+  "support": "mailto:yes@upvote.club",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"],
+      "env": {
+        "UPVOTE_API_KEY": "${user_config.api_key}",
+        "UPVOTE_API_URL": "https://api.upvote.club"
+      }
+    }
+  },
+  "tools": [
+    { "name": "list_platforms", "description": "List supported platforms, actions and minimum prices" },
+    { "name": "list_api_keys", "description": "List active API key metadata (requires JWT in UPVOTE_JWT env if configured)" },
+    { "name": "generate_api_key", "description": "Generate a new API key (requires JWT)" },
+    { "name": "create_task", "description": "Create a promotion task — spends account points" },
+    { "name": "get_task_status", "description": "Get progress of one or more promotion tasks" },
+    { "name": "delete_task", "description": "Delete a promotion task and refund unused points" }
+  ],
+  "keywords": ["marketing", "promotion", "social media", "upvotes", "engagement", "reddit", "product hunt"],
+  "privacy_policies": ["https://upvote.club/privacy-policy"],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": { "node": ">=18.0.0" }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Upvote.club API Key",
+      "description": "Your personal API key from https://upvote.club/api (MATE plan). Starts with upv_.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

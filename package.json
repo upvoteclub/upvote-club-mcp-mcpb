@@ -1,0 +1,28 @@
+{
+  "name": "upvote-club-mcp-mcpb",
+  "version": "1.0.0",
+  "description": "Claude Desktop MCPB extension for Upvote.club Public API",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "pack": "npx @anthropic-ai/mcpb pack"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Upvote.club <yes@upvote.club>",
+  "license": "MIT",
+  "homepage": "https://upvote.club/api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alxgntv/upvote-club-mcp-mcpb.git"
+  },
+  "dependencies": {
+    "@upvote-club/mcp-core": "github:alxgntv/upvote-club-mcp-core",
+    "@modelcontextprotocol/sdk": "^1.12.0"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "^1.0.0"
+  }
+}
