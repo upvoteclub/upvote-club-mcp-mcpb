@@ -26,7 +26,7 @@ npx @anthropic-ai/mcpb pack               # produces upvote-club.mcpb
 
 ## Tools
 
-6 tools — see https://github.com/alxgntv/upvote-club-mcp-core/blob/main/docs/API_REFERENCE.md
+6 tools — see https://github.com/upvoteclub/upvote-club-mcp-core/blob/main/docs/API_REFERENCE.md
 
 ## Privacy
 
